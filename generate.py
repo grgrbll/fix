@@ -192,6 +192,7 @@ for template in messageTemplates:
             if out.find("fmt") > 0:
                 imports += 'import "fmt"\n' 
             with open(writepath,"w+") as outputFile:
+                outputFile.write(f"package {name}")
                 outputFile.write(f"{package}\n\n{imports}\n")
                 outputFile.write(out)
                 outputFile.close()
