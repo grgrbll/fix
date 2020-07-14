@@ -1,0 +1,75 @@
+Email:
+  message_type: C
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    EmailThreadID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '164'
+    EmailType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '94'
+    OrigTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '42'
+    Subject:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '147'
+    EncodedSubjectLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '356'
+    EncodedSubject:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '357'
+    RoutingGrp:
+      required: false
+      component_type: RoutingGrp
+    InstrmtGrp:
+      required: false
+      component_type: InstrmtGrp
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    LinesOfTextGrp:
+      required: true
+      component_type: LinesOfTextGrp
+    RawDataLength:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '95'
+    RawData:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '96'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

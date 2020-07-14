@@ -1,0 +1,305 @@
+Confirmation:
+  message_type: AK
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ConfirmID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '664'
+    ConfirmRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '772'
+    ConfirmReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '859'
+    ConfirmTransType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '666'
+    ConfirmType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '773'
+    CopyMsgIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '797'
+    LegalConfirm:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '650'
+    ConfirmStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '665'
+    Parties:
+      required: false
+      component_type: Parties
+    OrdAllocGrp:
+      required: false
+      component_type: OrdAllocGrp
+    AllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '70'
+    SecondaryAllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '793'
+    IndividualAllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '467'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    TradeDate:
+      required: true
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    TrdRegTimestamps:
+      required: false
+      component_type: TrdRegTimestamps
+    Instrument:
+      required: true
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: true
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: true
+      component_type: InstrmtLegGrp
+    YieldData:
+      required: false
+      component_type: YieldData
+    AllocQty:
+      required: true
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '80'
+    QtyType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '854'
+    Side:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    LastMkt:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '30'
+    CpctyConfGrp:
+      required: true
+      component_type: CpctyConfGrp
+    AllocAccount:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '79'
+    AllocAcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '661'
+    AllocAccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '798'
+    AvgPx:
+      required: true
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '6'
+    AvgPxPrecision:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '74'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    AvgParPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '860'
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    ReportedPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '861'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    ProcessCode:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '81'
+    GrossTradeAmt:
+      required: true
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '381'
+    NumDaysInterest:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '157'
+    ExDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '230'
+    AccruedInterestRate:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '158'
+    AccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '159'
+    InterestAtMaturity:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '738'
+    EndAccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '920'
+    StartCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '921'
+    EndCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '922'
+    Concession:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '238'
+    TotalTakedown:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '237'
+    NetMoney:
+      required: true
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '118'
+    MaturityNetMoney:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '890'
+    SettlCurrAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '119'
+    SettlCurrency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '120'
+    SettlCurrFxRate:
+      required: false
+      type: Float
+      validation_regex: '{{Float}}'
+      id: '155'
+    SettlCurrFxRateCalc:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '156'
+    SettlType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '63'
+    SettlDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '64'
+    SettlInstructionsData:
+      required: false
+      component_type: SettlInstructionsData
+    CommissionData:
+      required: false
+      component_type: CommissionData
+    SharedCommission:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '858'
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    MiscFeesGrp:
+      required: false
+      component_type: MiscFeesGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,68 @@
+Logon:
+  message_type: A
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    EncryptMethod:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '98'
+    HeartBtInt:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '108'
+    RawDataLength:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '95'
+    RawData:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '96'
+    ResetSeqNumFlag:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '141'
+    NextExpectedMsgSeqNum:
+      required: false
+      type: SeqNum
+      validation_regex: '{{SeqNum}}'
+      id: '789'
+    MaxMessageSize:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '383'
+    TestMessageIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '464'
+    Username:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '553'
+    Password:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '554'
+    DefaultApplVerID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '1137'
+    MsgTypeGrp:
+      required: false
+      component_type: MsgTypeGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

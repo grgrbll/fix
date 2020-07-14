@@ -1,0 +1,115 @@
+OrderCancelReject:
+  message_type: '9'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrderID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    SecondaryOrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '198'
+    SecondaryClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '526'
+    ClOrdID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    ClOrdLinkID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '583'
+    OrigClOrdID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '41'
+    OrdStatus:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '39'
+    WorkingIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '636'
+    OrigOrdModTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '586'
+    ListID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    TradeOriginationDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '229'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    CxlRejResponseTo:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '434'
+    CxlRejReason:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '102'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,86 @@
+AllocationInstructionAck:
+  message_type: P
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    AllocID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '70'
+    Parties:
+      required: false
+      component_type: Parties
+    SecondaryAllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '793'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    AllocStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '87'
+    AllocRejCode:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '88'
+    AllocType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '626'
+    AllocIntermedReqType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '808'
+    MatchStatus:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '573'
+    Product:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '460'
+    SecurityType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '167'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    AllocAckGrp:
+      required: false
+      component_type: AllocAckGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

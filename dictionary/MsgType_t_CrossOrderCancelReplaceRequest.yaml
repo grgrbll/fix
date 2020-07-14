@@ -1,0 +1,267 @@
+CrossOrderCancelReplaceRequest:
+  message_type: t
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    CrossID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '548'
+    OrigCrossID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '551'
+    CrossType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '549'
+    CrossPrioritization:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '550'
+    SideCrossOrdModGrp:
+      required: true
+      component_type: SideCrossOrdModGrp
+    Instrument:
+      required: true
+      component_type: Instrument
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    SettlType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '63'
+    SettlDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '64'
+    HandlInst:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '21'
+    ExecInst:
+      required: false
+      type: MultipleCharValue
+      validation_regex: '{{MultipleCharValue}}'
+      id: '18'
+    MinQty:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '110'
+    MaxFloor:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '111'
+    ExDestination:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '100'
+    TrdgSesGrp:
+      required: false
+      component_type: TrdgSesGrp
+    ProcessCode:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '81'
+    PrevClosePx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '140'
+    LocateReqd:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '114'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    OrdType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '40'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    Price:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '44'
+    StopPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '99'
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    YieldData:
+      required: false
+      component_type: YieldData
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    ComplianceID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '376'
+    IOIID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '23'
+    QuoteID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '117'
+    TimeInForce:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '59'
+    EffectiveTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '168'
+    ExpireDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '432'
+    ExpireTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '126'
+    GTBookingInst:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '427'
+    MaxShow:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '210'
+    PegInstructions:
+      required: false
+      component_type: PegInstructions
+    DiscretionInstructions:
+      required: false
+      component_type: DiscretionInstructions
+    TargetStrategy:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '847'
+    TargetStrategyParameters:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '848'
+    ParticipationRate:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '849'
+    CancellationRights:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '480'
+    MoneyLaunderingStatus:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '481'
+    RegistID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '513'
+    Designation:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '494'
+    StrategyParametersGrp:
+      required: false
+      component_type: StrategyParametersGrp
+    HostCrossID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '961'
+    TransBkdTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '483'
+    RootParties:
+      required: false
+      component_type: RootParties
+    MatchIncrement:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '1089'
+    MaxPriceLevels:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '1090'
+    DisplayInstruction:
+      required: false
+      component_type: DisplayInstruction
+    PriceProtectionScope:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '1092'
+    TriggeringInstruction:
+      required: false
+      component_type: TriggeringInstruction
+    ExDestinationIDSource:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '1133'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

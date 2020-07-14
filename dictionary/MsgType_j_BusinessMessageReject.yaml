@@ -1,0 +1,45 @@
+BusinessMessageReject:
+  message_type: j
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    RefSeqNum:
+      required: false
+      type: SeqNum
+      validation_regex: '{{SeqNum}}'
+      id: '45'
+    RefMsgType:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '372'
+    BusinessRejectRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '379'
+    BusinessRejectReason:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '380'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

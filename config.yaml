@@ -1,0 +1,97 @@
+
+
+template_input_dir: "fixTemplates"
+
+module_name: "grgrbll/fix"
+message_output_package: "Messages"
+shared_component_output_package: "Shared"
+factory_output_package: "Factory"
+
+fix_field_validation:
+    CheckSum: '[01][0-9][0-9]|2' # Must be between 000 and 255, leading 0's included
+
+fix_type_validation:
+    # Any characters except delimiter
+    String: '[^|]*'
+    
+    # ISO 3166 Country code
+    Country: '[A-Z]{2}' 
+    
+    # ISO 4217 Currency code
+    Currency: '[A-Z]{3}' 
+    
+    # ISO 10383 Market Identifier Code (MIC)
+    Exchange: '[A-Z0-9]{4}' 
+    
+    # YYYYMMDD
+    LocalMktDate: '[0-9]{8}' 
+    
+    # YYYYMM or YYYYMMDD or YYYYMMWW
+    MonthYear: '[0-9]{6}([0-9]{2}|w[0-9])?' 
+    
+    # space seperated single characters
+    MultipleCharValue: '[ ]?(\w[ ])+\w?' 
+    
+    # space seperated words
+    MultipleStringValue: '[ ]?(\w+[ ])+\w+?' 
+    
+    # similar to ISO 8601, HH:MM[:SS][Z|[+|-hh[:mm]]]
+    TZTimeOnly: '\d{2}:\d{2}(:\d{2})?(Z|[\+-]\d{2}(:\d{2})?)' 
+    
+    # similar to ISO 8601, YYYYMMDD-HH:MM[:SS][Z | [ + | - hh[:mm]]]
+    TZTimestamp: '{{UTCDateOnly}}-{{TZTimeOnly}}' 
+    
+    # YYYYMMDD
+    UTCDateOnly: '\d{4}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])' 
+    
+    # HH:MM:SS[.sss]
+    UTCTimeOnly: '([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](.\d{3})?' 
+    
+    # YYYYMMDD-HH:MM:SS[.sss]
+    UTCTimestamp: '{{UTCDateOnly}}-{{UTCTimeOnly}}' 
+    
+    # any single character except the delimiter
+    Char: '[^|]' 
+    
+    # Y or N
+    Boolean: '[YN]' 
+    
+    # any positive or negative floating point number. Ommiting 0's before the decimal point is permitted
+    Float: '-?\d*(\.\d*)?' 
+    Amt: '{{Float}}'
+    Percentage: '{{Float}}'
+    PriceOffset: '{{Float}}'
+    Qty: '{{Float}}'
+    
+    # Positive or negative integer
+    Int: '-?\d+' 
+    
+    # Positive integer
+    Length: '\d+' 
+    NumInGroup: '\d+'
+    SeqNum: '\d+'
+    
+    # Positive integers without leading zeros
+    TagNum: '[1-9]\d*'
+    
+    # Data can include anything, including the delimiter
+    Data: '.*'
+    
+    
+message_start_tag_id: 8
+message_type_tag_id: 35
+message_end_tag_id: 10
+
+# message length from the delimiter after the body length field (not inclusive) to the delimiter just before
+# the checksum field (inclusive)
+body_length_field: 9 
+
+# The sum of every byte prior to the checksum field (including the immediately preceeding delimiter) modulo 256
+checksum_field: 10
+
+# Connecting to a standard compliant FIX server should not require a message seperator.
+# If one is required, most likely it will be '\n' which has an ascii value of 
+#message_seperator_ascii_hex_val: 0x0A
+
+# All standards complient FIX servers should use ascii 0x01 as a field seperator 
+field_seperator_ascii_hex_val: 0x01

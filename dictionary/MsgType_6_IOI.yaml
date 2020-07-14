@@ -1,0 +1,128 @@
+IOI:
+  message_type: '6'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    IOIID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '23'
+    IOITransType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '28'
+    IOIRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '26'
+    Instrument:
+      required: true
+      component_type: Instrument
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    Side:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    QtyType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '854'
+    OrderQtyData:
+      required: false
+      component_type: OrderQtyData
+    IOIQty:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '27'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    InstrmtLegIOIGrp:
+      required: false
+      component_type: InstrmtLegIOIGrp
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    Price:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '44'
+    ValidUntilTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '62'
+    IOIQltyInd:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '25'
+    IOINaturalFlag:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '130'
+    IOIQualGrp:
+      required: false
+      component_type: IOIQualGrp
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    URLLink:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '149'
+    RoutingGrp:
+      required: false
+      component_type: RoutingGrp
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    YieldData:
+      required: false
+      component_type: YieldData
+    Parties:
+      required: false
+      component_type: Parties
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,92 @@
+SecurityDefinition:
+  message_type: d
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityReportID:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '964'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    SecurityReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '320'
+    SecurityResponseID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '322'
+    SecurityResponseType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '323'
+    Instrument:
+      required: false
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    ExpirationCycle:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '827'
+    RoundLot:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '561'
+    MinTradeVol:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '562'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

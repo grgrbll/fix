@@ -1,0 +1,106 @@
+NewOrderList:
+  message_type: E
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ListID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    BidID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '390'
+    ClientBidID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '391'
+    ProgRptReqs:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '414'
+    BidType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '394'
+    ProgPeriodInterval:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '415'
+    CancellationRights:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '480'
+    MoneyLaunderingStatus:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '481'
+    RegistID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '513'
+    ListExecInstType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '433'
+    ListExecInst:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '69'
+    EncodedListExecInstLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '352'
+    EncodedListExecInst:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '353'
+    AllowableOneSidednessPct:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '765'
+    AllowableOneSidednessValue:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '766'
+    AllowableOneSidednessCurr:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '767'
+    TotNoOrders:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '68'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    ListOrdGrp:
+      required: true
+      component_type: ListOrdGrp
+    RootParties:
+      required: false
+      component_type: RootParties
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

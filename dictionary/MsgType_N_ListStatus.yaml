@@ -1,0 +1,68 @@
+ListStatus:
+  message_type: N
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ListID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    ListStatusType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '429'
+    NoRpts:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '82'
+    ListOrderStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '431'
+    RptSeq:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '83'
+    ListStatusText:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '444'
+    EncodedListStatusTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '445'
+    EncodedListStatusText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '446'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    TotNoOrders:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '68'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    OrdListStatGrp:
+      required: true
+      component_type: OrdListStatGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

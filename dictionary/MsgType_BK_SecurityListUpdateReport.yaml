@@ -1,0 +1,58 @@
+SecurityListUpdateReport:
+  message_type: BK
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityReportID:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '964'
+    SecurityReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '320'
+    SecurityResponseID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '322'
+    SecurityRequestResult:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '560'
+    TotNoRelatedSym:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '393'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    SecurityUpdateAction:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '980'
+    CorporateAction:
+      required: false
+      type: MultipleCharValue
+      validation_regex: '{{MultipleCharValue}}'
+      id: '292'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    SecLstUpdRelSymGrp:
+      required: false
+      component_type: SecLstUpdRelSymGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

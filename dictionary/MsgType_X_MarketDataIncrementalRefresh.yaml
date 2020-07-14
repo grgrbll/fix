@@ -1,0 +1,46 @@
+MarketDataIncrementalRefresh:
+  message_type: X
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    MDReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '262'
+    MDIncGrp:
+      required: true
+      component_type: MDIncGrp
+    ApplQueueDepth:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '813'
+    ApplQueueResolution:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '814'
+    MDBookType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '1021'
+    MDFeedType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1022'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    RoutingGrp:
+      required: false
+      component_type: RoutingGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,54 @@
+AdjustedPositionReport:
+  message_type: BL
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    PosMaintRptID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '721'
+    PosReqType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '724'
+    ClearingBusinessDate:
+      required: true
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    SettlSessID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '716'
+    Parties:
+      required: true
+      component_type: Parties
+    PositionQty:
+      required: true
+      component_type: PositionQty
+    Instrument:
+      required: false
+      component_type: Instrument
+    SettlPrice:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '730'
+    PriorSettlPrice:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '734'
+    PosMaintRptRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '714'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

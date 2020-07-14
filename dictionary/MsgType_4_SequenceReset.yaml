@@ -1,0 +1,20 @@
+SequenceReset:
+  message_type: '4'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    GapFillFlag:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '123'
+    NewSeqNo:
+      required: true
+      type: SeqNum
+      validation_regex: '{{SeqNum}}'
+      id: '36'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

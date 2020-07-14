@@ -1,0 +1,48 @@
+SecurityList:
+  message_type: y
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '320'
+    SecurityResponseID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '322'
+    SecurityRequestResult:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '560'
+    TotNoRelatedSym:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '393'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    SecListGrp:
+      required: false
+      component_type: SecListGrp
+    SecurityReportID:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '964'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

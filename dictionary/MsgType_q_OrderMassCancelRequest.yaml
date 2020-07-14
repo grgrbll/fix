@@ -1,0 +1,69 @@
+OrderMassCancelRequest:
+  message_type: q
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ClOrdID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    SecondaryClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '526'
+    MassCancelRequestType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '530'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    Instrument:
+      required: false
+      component_type: Instrument
+    UnderlyingInstrument:
+      required: false
+      component_type: UnderlyingInstrument
+    Side:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    Parties:
+      required: false
+      component_type: Parties
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

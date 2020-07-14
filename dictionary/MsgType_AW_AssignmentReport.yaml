@@ -1,0 +1,138 @@
+AssignmentReport:
+  message_type: AW
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    AsgnRptID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '833'
+    TotNumAssignmentReports:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '832'
+    LastRptRequested:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '912'
+    Parties:
+      required: true
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    Instrument:
+      required: false
+      component_type: Instrument
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    PositionQty:
+      required: false
+      component_type: PositionQty
+    PositionAmountData:
+      required: false
+      component_type: PositionAmountData
+    ThresholdAmount:
+      required: false
+      type: PriceOffset
+      validation_regex: '{{PriceOffset}}'
+      id: '834'
+    SettlPrice:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '730'
+    SettlPriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '731'
+    UnderlyingSettlPrice:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '732'
+    ExpireDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '432'
+    AssignmentMethod:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '744'
+    AssignmentUnit:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '745'
+    OpenInterest:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '746'
+    ExerciseMethod:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '747'
+    SettlSessID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '716'
+    SettlSessSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '717'
+    ClearingBusinessDate:
+      required: true
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    PriorSettlPrice:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '734'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

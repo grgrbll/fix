@@ -1,0 +1,43 @@
+QuoteRequestReject:
+  message_type: AG
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    QuoteReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '131'
+    RFQReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '644'
+    QuoteRequestRejectReason:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '658'
+    QuotReqRjctGrp:
+      required: true
+      component_type: QuotReqRjctGrp
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

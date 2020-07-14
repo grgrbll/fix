@@ -1,0 +1,104 @@
+Advertisement:
+  message_type: '7'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    AdvId:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '2'
+    AdvTransType:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '5'
+    AdvRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '3'
+    Instrument:
+      required: true
+      component_type: Instrument
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    AdvSide:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '4'
+    Quantity:
+      required: true
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '53'
+    QtyType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '854'
+    Price:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '44'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    URLLink:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '149'
+    LastMkt:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '30'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

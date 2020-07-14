@@ -1,0 +1,98 @@
+TradingSessionStatus:
+  message_type: h
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    TradSesReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '335'
+    TradingSessionID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    TradSesMethod:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '338'
+    TradSesMode:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '339'
+    UnsolicitedIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '325'
+    TradSesStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '340'
+    TradSesStatusRejReason:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '567'
+    TradSesStartTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '341'
+    TradSesOpenTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '342'
+    TradSesPreCloseTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '343'
+    TradSesCloseTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '344'
+    TradSesEndTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '345'
+    TotalVolumeTraded:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '387'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    Instrument:
+      required: false
+      component_type: Instrument
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

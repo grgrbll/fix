@@ -1,0 +1,38 @@
+MarketDataRequestReject:
+  message_type: Y
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    MDReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '262'
+    MDReqRejReason:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '281'
+    MDRjctGrp:
+      required: false
+      component_type: MDRjctGrp
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

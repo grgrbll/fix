@@ -1,0 +1,60 @@
+CrossOrderCancelRequest:
+  message_type: u
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    CrossID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '548'
+    OrigCrossID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '551'
+    CrossType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '549'
+    CrossPrioritization:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '550'
+    SideCrossOrdCxlGrp:
+      required: true
+      component_type: SideCrossOrdCxlGrp
+    Instrument:
+      required: true
+      component_type: Instrument
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    HostCrossID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '961'
+    RootParties:
+      required: false
+      component_type: RootParties
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

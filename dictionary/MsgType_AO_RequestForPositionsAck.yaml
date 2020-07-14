@@ -1,0 +1,132 @@
+RequestForPositionsAck:
+  message_type: AO
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    PosMaintRptID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '721'
+    PosReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '710'
+    TotalNumPosReports:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '727'
+    UnsolicitedIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '325'
+    PosReqResult:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '728'
+    PosReqStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '729'
+    Parties:
+      required: true
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    Instrument:
+      required: false
+      component_type: Instrument
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    ResponseTransportType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '725'
+    ResponseDestination:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '726'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    PosReqType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '724'
+    MatchStatus:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '573'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    SettlSessID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '716'
+    SettlSessSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '717'
+    SettlCurrency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '120'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

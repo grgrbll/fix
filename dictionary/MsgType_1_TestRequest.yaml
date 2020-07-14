@@ -1,0 +1,15 @@
+TestRequest:
+  message_type: '1'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    TestReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '112'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

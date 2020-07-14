@@ -1,0 +1,74 @@
+MarketDataRequest:
+  message_type: V
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    MDReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '262'
+    SubscriptionRequestType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    MarketDepth:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '264'
+    MDUpdateType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '265'
+    AggregatedBook:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '266'
+    OpenCloseSettlFlag:
+      required: false
+      type: MultipleCharValue
+      validation_regex: '{{MultipleCharValue}}'
+      id: '286'
+    Scope:
+      required: false
+      type: MultipleCharValue
+      validation_regex: '{{MultipleCharValue}}'
+      id: '546'
+    MDImplicitDelete:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '547'
+    MDReqGrp:
+      required: true
+      component_type: MDReqGrp
+    InstrmtMDReqGrp:
+      required: true
+      component_type: InstrmtMDReqGrp
+    TrdgSesGrp:
+      required: false
+      component_type: TrdgSesGrp
+    ApplQueueAction:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '815'
+    ApplQueueMax:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '812'
+    MDQuoteType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '1070'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,203 @@
+CollateralRequest:
+  message_type: AX
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    CollReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '894'
+    CollAsgnReason:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '895'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    ExpireTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '126'
+    Parties:
+      required: false
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    SecondaryOrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '198'
+    SecondaryClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '526'
+    ExecCollGrp:
+      required: false
+      component_type: ExecCollGrp
+    TrdCollGrp:
+      required: false
+      component_type: TrdCollGrp
+    Instrument:
+      required: false
+      component_type: Instrument
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    SettlDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '64'
+    Quantity:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '53'
+    QtyType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '854'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    UndInstrmtCollGrp:
+      required: false
+      component_type: UndInstrmtCollGrp
+    MarginExcess:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '899'
+    TotalNetValue:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '900'
+    CashOutstanding:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '901'
+    TrdRegTimestamps:
+      required: false
+      component_type: TrdRegTimestamps
+    Side:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    MiscFeesGrp:
+      required: false
+      component_type: MiscFeesGrp
+    Price:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '44'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    AccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '159'
+    EndAccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '920'
+    StartCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '921'
+    EndCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '922'
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    SettlSessID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '716'
+    SettlSessSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '717'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

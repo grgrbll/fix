@@ -1,0 +1,104 @@
+TradeCaptureReportRequestAck:
+  message_type: AQ
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    TradeRequestID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '568'
+    TradeRequestType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '569'
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    TotNumTradeReports:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '748'
+    TradeRequestResult:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '749'
+    TradeRequestStatus:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '750'
+    Instrument:
+      required: true
+      component_type: Instrument
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    MultiLegReportingType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '442'
+    ResponseTransportType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '725'
+    ResponseDestination:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '726'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageEventSource:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1011'
+    TradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1003'
+    SecondaryTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1040'
+    FirmTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1041'
+    SecondaryFirmTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1042'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,65 @@
+News:
+  message_type: B
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrigTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '42'
+    Urgency:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '61'
+    Headline:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '148'
+    EncodedHeadlineLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '358'
+    EncodedHeadline:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '359'
+    RoutingGrp:
+      required: false
+      component_type: RoutingGrp
+    InstrmtGrp:
+      required: false
+      component_type: InstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    LinesOfTextGrp:
+      required: true
+      component_type: LinesOfTextGrp
+    URLLink:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '149'
+    RawDataLength:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '95'
+    RawData:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '96'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,102 @@
+ExecutionAcknowledgement:
+  message_type: BN
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrderID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    SecondaryOrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '198'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    ExecAckStatus:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '1036'
+    ExecID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '17'
+    DKReason:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '127'
+    Instrument:
+      required: true
+      component_type: Instrument
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    Side:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    OrderQtyData:
+      required: true
+      component_type: OrderQtyData
+    LastQty:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '32'
+    LastPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '31'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    LastParPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '669'
+    CumQty:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '14'
+    AvgPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '6'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

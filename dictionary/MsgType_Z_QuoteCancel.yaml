@@ -1,0 +1,61 @@
+QuoteCancel:
+  message_type: Z
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    QuoteReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '131'
+    QuoteID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '117'
+    QuoteCancelType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '298'
+    QuoteResponseLevel:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '301'
+    Parties:
+      required: false
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    QuotCxlEntriesGrp:
+      required: false
+      component_type: QuotCxlEntriesGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

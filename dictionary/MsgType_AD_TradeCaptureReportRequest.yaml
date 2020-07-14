@@ -1,0 +1,251 @@
+TradeCaptureReportRequest:
+  message_type: AD
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    TradeRequestID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '568'
+    TradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1003'
+    SecondaryTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1040'
+    FirmTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1041'
+    SecondaryFirmTradeID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1042'
+    TradeRequestType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '569'
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    TradeReportID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '571'
+    SecondaryTradeReportID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '818'
+    ExecID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '17'
+    ExecType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '150'
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    MatchStatus:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '573'
+    TrdType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '828'
+    TrdSubType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '829'
+    TradeHandlingInstr:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '1123'
+    TransferReason:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '830'
+    SecondaryTrdType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '855'
+    TradeLinkID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '820'
+    TrdMatchID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '880'
+    Parties:
+      required: false
+      component_type: Parties
+    Instrument:
+      required: false
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    Underlyings:
+      counter_name: NoUnderlyings
+      counter_id: '711'
+      repeating_component: TradeCaptureReportRequest_Underlyings
+      required: false
+      type: NumInGroup
+      validation_regex: '{{NumInGroup}}'
+      id: '711'
+    Legs:
+      counter_name: NoLegs
+      counter_id: '555'
+      repeating_component: TradeCaptureReportRequest_Legs
+      required: false
+      type: NumInGroup
+      validation_regex: '{{NumInGroup}}'
+      id: '555'
+    Dates:
+      counter_name: NoDates
+      counter_id: '580'
+      repeating_component: TradeCaptureReportRequest_Dates
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '580'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    TimeBracket:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '943'
+    Side:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    MultiLegReportingType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '442'
+    TradeInputSource:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '578'
+    TradeInputDevice:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '579'
+    ResponseTransportType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '725'
+    ResponseDestination:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '726'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageEventSource:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1011'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+
+TradeCaptureReportRequest_Underlyings:
+  fields:
+    UnderlyingInstrument:
+      required: false
+      component_type: UnderlyingInstrument
+
+TradeCaptureReportRequest_Legs:
+  fields:
+    InstrumentLeg:
+      required: false
+      component_type: InstrumentLeg
+
+TradeCaptureReportRequest_Dates:
+  fields:
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    LastUpdateTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '779'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+

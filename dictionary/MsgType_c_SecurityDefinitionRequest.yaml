@@ -1,0 +1,72 @@
+SecurityDefinitionRequest:
+  message_type: c
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '320'
+    SecurityRequestType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '321'
+    Instrument:
+      required: false
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    ExpirationCycle:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '827'
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

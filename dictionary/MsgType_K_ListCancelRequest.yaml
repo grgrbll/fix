@@ -1,0 +1,48 @@
+ListCancelRequest:
+  message_type: K
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ListID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    TradeOriginationDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '229'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    Parties:
+      required: false
+      component_type: Parties
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

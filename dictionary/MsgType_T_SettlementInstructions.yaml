@@ -1,0 +1,58 @@
+SettlementInstructions:
+  message_type: T
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SettlInstMsgID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '777'
+    SettlInstReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '791'
+    SettlInstMode:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '160'
+    SettlInstReqRejCode:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '792'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    SettlInstGrp:
+      required: false
+      component_type: SettlInstGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

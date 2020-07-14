@@ -1,0 +1,300 @@
+QuoteStatusReport:
+  message_type: AI
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    QuoteStatusReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '649'
+    QuoteReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '131'
+    QuoteID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '117'
+    QuoteRespID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '693'
+    QuoteType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '537'
+    Parties:
+      required: false
+      component_type: Parties
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    Instrument:
+      required: true
+      component_type: Instrument
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    Side:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    OrderQtyData:
+      required: false
+      component_type: OrderQtyData
+    SettlType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '63'
+    SettlDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '64'
+    SettlDate2:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '193'
+    OrderQty2:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '192'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    LegQuotStatGrp:
+      required: false
+      component_type: LegQuotStatGrp
+    QuotQualGrp:
+      required: false
+      component_type: QuotQualGrp
+    ExpireTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '126'
+    Price:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '44'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    YieldData:
+      required: false
+      component_type: YieldData
+    BidPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '132'
+    OfferPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '133'
+    MktBidPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '645'
+    MktOfferPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '646'
+    MinBidSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '647'
+    BidSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '134'
+    MinOfferSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '648'
+    OfferSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '135'
+    ValidUntilTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '62'
+    BidSpotRate:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '188'
+    OfferSpotRate:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '190'
+    BidForwardPoints:
+      required: false
+      type: PriceOffset
+      validation_regex: '{{PriceOffset}}'
+      id: '189'
+    OfferForwardPoints:
+      required: false
+      type: PriceOffset
+      validation_regex: '{{PriceOffset}}'
+      id: '191'
+    MidPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '631'
+    BidYield:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '632'
+    MidYield:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '633'
+    OfferYield:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '634'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    OrdType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '40'
+    BidForwardPoints2:
+      required: false
+      type: PriceOffset
+      validation_regex: '{{PriceOffset}}'
+      id: '642'
+    OfferForwardPoints2:
+      required: false
+      type: PriceOffset
+      validation_regex: '{{PriceOffset}}'
+      id: '643'
+    SettlCurrBidFxRate:
+      required: false
+      type: Float
+      validation_regex: '{{Float}}'
+      id: '656'
+    SettlCurrOfferFxRate:
+      required: false
+      type: Float
+      validation_regex: '{{Float}}'
+      id: '657'
+    SettlCurrFxRateCalc:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '156'
+    CommType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '13'
+    Commission:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '12'
+    CustOrderCapacity:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '582'
+    ExDestination:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '100'
+    QuoteStatus:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '297'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    ExDestinationIDSource:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '1133'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

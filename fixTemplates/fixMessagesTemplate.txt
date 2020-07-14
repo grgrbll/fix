@@ -1,0 +1,160 @@
+
+{% for componentName, component in definitions.items() %}
+
+type {{ toPrivate(componentName) }}_RegexValidator struct {
+    {%- for fieldName, fieldData in component['fields'].items() %}
+    {%- if isBasic(fieldData) %}
+    {{fieldName}} *(regexp.Regexp)
+    {%- endif -%}
+    {% endfor %}
+    _controlBlock fixMessageControlBlock
+}
+
+
+var my{{ componentName }}_RegexValidator {{ toPrivate(componentName) }}_RegexValidator
+
+func init() {
+    my{{ componentName }}_RegexValidator
+    {%- for fieldName, fieldData in component['fields'].items() %}
+    {%- if isBasic(fieldData) %}
+    my{{ componentName }}_RegexValidator.{{fieldName}} = regexp.MustCompile(`{{fieldData.get('validation_regex','.*')}}`)
+    {%- endif -%}
+    {% endfor %}
+}
+
+type {{ componentName }} struct {
+    {%- for fieldName, fieldData in component['fields'].items() %}
+    {%- if isRepeat(fieldData) %}
+    {{fieldName}} []{{fieldData['repeating_component']}} 
+    {%- elif isComponent(fieldData) %}
+    {{fieldName}} {{fieldData['component_type']}} 
+    {%- elif isBasic(fieldData) %}
+    {{fieldName}} Types.{{fieldData['type']}} `id:"{{fieldData['id']}}", required:"{{'Y' if fieldData.get('required',False) else 'N'}}"`
+    {%- endif -%}
+    {% endfor %}
+    _controlBlock fixMessageControlBlock
+}
+
+func (m *{{ componentName }}) HasRequiredFields() bool {
+    valid := true
+    
+    {% for validationGroupName in component['validationGroups'] -%}
+    isSet{{validationGroupName}} := false
+    isValid{{validationGroupName}} := true
+    {%- endfor %}
+
+    {% for fieldName, fieldData in component['fields'].items() -%}
+    {% if isRequired(fieldData) and isBasic(fieldData) %}
+    {% if "validationGroup" in fieldData %}
+    isSet{{fieldData['validationGroup']}} = isSet{{fieldData['validationGroup']}} || m.{{fieldName}}.HasValue()
+    isValid{{fieldData['validationGroup']}} = isValid{{fieldData['validationGroup']}} && m.{{fieldName}}.HasValue()
+    {% else %}
+    valid = valid && m.{{fieldName}}.HasValue()
+    {% endif %}
+    {% elif isComponent(fieldData) %}
+    valid = valid && m.{{fieldName}}.HasRequiredFields()
+    {% elif isRepeat(fieldData) %}
+    {% if "validationGroup" in fieldData %}
+    isSet{{fieldData['validationGroup']}} = isSet{{fieldData['validationGroup']}} || len(m.{{fieldName}}) > 0
+    for _, g := range(m.{{fieldName}}) {
+        isValid{{fieldData['validationGroup']}} = isValid{{fieldData['validationGroup']}} && g.HasRequiredFields()
+    }
+    {% else %}
+    for _, g := range(m.{{fieldName}}) {
+        valid = valid && g.HasRequiredFields()
+    }
+    {% endif %}
+    {% endif %}
+    {%- endfor %}
+    
+    {% for validationGroupName in component['validationGroups'] -%}
+    valid = valid && (isSet{{validationGroupName}} == false || isValid{{validationGroupName}})
+    {%- endfor %}
+    
+    return valid
+}
+
+func (m *{{ componentName }}) MarshalFIX(res *bufio.Writer) err {
+    {% for fieldName, field in component['fields'].items() %}
+    {% if isRepeat(field) -%}
+    {% if isRequired(field) == False -%}
+    if len(m.{{fieldName}}) > 0 {
+    {% endif %}
+    (*res).WriteString("{{field['counter_id']}}=")
+    (*res).WriteString(strconv.Itoa(len(m.{{fieldName}})))
+    (*res).WriteString("\x01")
+    for _, g := range m.{{fieldName}} {
+        g.GetFixRepr(res)
+    }
+    {% if isRequired(field) == False -%}
+    }
+    {% endif %}
+    {%- elif isBasic(field) -%}
+    if m.{{fieldName}}.HasValue() {
+        (*res).WriteString("{{field['id']}}=")
+        val, err := m.{{fieldName}}.MarshalFIX()
+        if err != nil {
+            return err
+        }
+        (*res).Write(val)
+        (*res).WriteString("\x01")
+    }
+    {%- elif isComponent(field) -%}
+    m.{{fieldName}}.GetFixRepr(res)
+    {%- endif -%}
+    
+    {% endfor %}
+}
+
+func (m *{{ componentName }}) UnmarshalFieldFIX(id int, value []byte) bool, err {
+    // Check if we are currently populating a group
+    used := false
+    for !used && m._controlBlock.mostRecentRepeatingGroup != nil {
+        used = m._controlBlock.mostRecentRepeatingGroup[m._controlBlock.mostRecentRepeatingGroupCounter].PopulateNextFieldById(id, value)
+        if !used {
+            // This group did not need use the latest field, and has all its mandatory fields, so consider it complete.
+            m._controlBlock.mostRecentRepeatingGroupCounter++
+            if m._controlBlock.mostRecentRepeatingGroupCounter >= len(m._controlBlock.mostRecentRepeatingGroup)  {
+                // we have all the repeated groups we expected.
+                m._controlBlock.mostRecentRepeatingGroup = nil
+            }
+        }
+    }
+    
+    // If one of the groups did not consume the KV, try our own fields 
+    if !used {
+        switch id {
+        {%- for fieldName, field in component['fields'].items() %}
+        {% if isRepeat(field) %}
+        case {{field['counter_id']}}:
+            // This counter ({{field['counter_name']}}) indicates the start of repeated group block {{field['name']}}
+            count, _ := strconv.Atoi(value)
+            m.{{fieldName}} = make([]{{field['repeating_component']}}, count)
+            m._controlBlock.mostRecentRepeatingGroup = make([]FixMessage, count)
+            for i := 0; i < count; i++ {
+                m._controlBlock.mostRecentRepeatingGroup[i] = &m.{{fieldName}}[i]
+            }
+            m._controlBlock.mostRecentRepeatingGroupCounter = 0
+            used = true
+        {% elif isBasic(field) %}
+        case {{field['id']}}:
+            if !m.{{fieldName}}.HasValue() {
+                used = true
+                err = m.{{fieldName}}.UnmarshalFIX(value)
+                if err != nil {
+                    return used, err
+                }
+            }
+        {% endif %}
+        {% endfor %}
+        default:
+            used = false
+        }
+    }
+   
+    return used
+}
+
+{% endfor %}
+
+

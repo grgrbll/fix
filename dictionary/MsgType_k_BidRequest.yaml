@@ -1,0 +1,151 @@
+BidRequest:
+  message_type: k
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    BidID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '390'
+    ClientBidID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '391'
+    BidRequestTransType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '374'
+    ListName:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '392'
+    TotNoRelatedSym:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '393'
+    BidType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '394'
+    NumTickets:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '395'
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    SideValue1:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '396'
+    SideValue2:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '397'
+    BidDescReqGrp:
+      required: false
+      component_type: BidDescReqGrp
+    BidCompReqGrp:
+      required: false
+      component_type: BidCompReqGrp
+    LiquidityIndType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '409'
+    WtAverageLiquidity:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '410'
+    ExchangeForPhysical:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '411'
+    OutMainCntryUIndex:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '412'
+    CrossPercent:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '413'
+    ProgRptReqs:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '414'
+    ProgPeriodInterval:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '415'
+    IncTaxInd:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '416'
+    ForexReq:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '121'
+    NumBidders:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '417'
+    TradeDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    BidTradeType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '418'
+    BasisPxType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '419'
+    StrikeTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '443'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

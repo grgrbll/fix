@@ -1,0 +1,64 @@
+RegistrationInstructions:
+  message_type: o
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    RegistID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '513'
+    RegistTransType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '514'
+    RegistRefID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '508'
+    ClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    Parties:
+      required: false
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    RegistAcctType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '493'
+    TaxAdvantageType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '495'
+    OwnershipType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '517'
+    RgstDtlsGrp:
+      required: false
+      component_type: RgstDtlsGrp
+    RgstDistInstGrp:
+      required: false
+      component_type: RgstDistInstGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

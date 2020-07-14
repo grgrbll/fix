@@ -1,0 +1,23 @@
+NetworkCounterpartySystemStatusRequest:
+  message_type: BC
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    NetworkRequestType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '935'
+    NetworkRequestID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '933'
+    CompIDReqGrp:
+      required: false
+      component_type: CompIDReqGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

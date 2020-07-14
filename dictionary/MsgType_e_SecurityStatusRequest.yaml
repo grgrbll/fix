@@ -1,0 +1,47 @@
+SecurityStatusRequest:
+  message_type: e
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityStatusReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '324'
+    Instrument:
+      required: true
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    SubscriptionRequestType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

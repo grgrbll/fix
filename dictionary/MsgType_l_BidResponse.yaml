@@ -1,0 +1,23 @@
+BidResponse:
+  message_type: l
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    BidID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '390'
+    ClientBidID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '391'
+    BidCompRspGrp:
+      required: true
+      component_type: BidCompRspGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

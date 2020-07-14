@@ -1,0 +1,61 @@
+MassQuote:
+  message_type: i
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    QuoteReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '131'
+    QuoteID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '117'
+    QuoteType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '537'
+    QuoteResponseLevel:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '301'
+    Parties:
+      required: false
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    DefBidSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '293'
+    DefOfferSize:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '294'
+    QuotSetGrp:
+      required: true
+      component_type: QuotSetGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

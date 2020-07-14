@@ -1,0 +1,65 @@
+QuoteStatusRequest:
+  message_type: a
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    QuoteStatusReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '649'
+    QuoteID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '117'
+    Instrument:
+      required: true
+      component_type: Instrument
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    Parties:
+      required: false
+      component_type: Parties
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

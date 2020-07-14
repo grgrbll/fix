@@ -1,0 +1,45 @@
+TradingSessionListRequest:
+  message_type: BI
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    TradSesReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '335'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    SecurityExchange:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '207'
+    TradSesMethod:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '338'
+    TradSesMode:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '339'
+    SubscriptionRequestType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

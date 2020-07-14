@@ -1,0 +1,31 @@
+ListStrikePrice:
+  message_type: m
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    ListID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    TotNoStrikes:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '422'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    InstrmtStrkPxGrp:
+      required: true
+      component_type: InstrmtStrkPxGrp
+    UndInstrmtStrkPxGrp:
+      required: false
+      component_type: UndInstrmtStrkPxGrp
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

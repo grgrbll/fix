@@ -1,0 +1,45 @@
+UserRequest:
+  message_type: BE
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    UserRequestID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '923'
+    UserRequestType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '924'
+    Username:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '553'
+    Password:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '554'
+    NewPassword:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '925'
+    RawDataLength:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '95'
+    RawData:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '96'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

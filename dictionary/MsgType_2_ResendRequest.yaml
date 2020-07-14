@@ -1,0 +1,20 @@
+ResendRequest:
+  message_type: '2'
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    BeginSeqNo:
+      required: true
+      type: SeqNum
+      validation_regex: '{{SeqNum}}'
+      id: '7'
+    EndSeqNo:
+      required: true
+      type: SeqNum
+      validation_regex: '{{SeqNum}}'
+      id: '16'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,10 @@
+XMLnonFIX:
+  message_type: n
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

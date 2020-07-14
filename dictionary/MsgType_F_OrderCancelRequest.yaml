@@ -1,0 +1,105 @@
+OrderCancelRequest:
+  message_type: F
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    OrigClOrdID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '41'
+    OrderID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '37'
+    ClOrdID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '11'
+    SecondaryClOrdID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '526'
+    ClOrdLinkID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '583'
+    ListID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '66'
+    OrigOrdModTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '586'
+    Account:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1'
+    AcctIDSource:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '660'
+    AccountType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '581'
+    Parties:
+      required: false
+      component_type: Parties
+    Instrument:
+      required: true
+      component_type: Instrument
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    Side:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    TransactTime:
+      required: true
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    OrderQtyData:
+      required: true
+      component_type: OrderQtyData
+    ComplianceID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '376'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

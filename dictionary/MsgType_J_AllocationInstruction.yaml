@@ -1,0 +1,349 @@
+AllocationInstruction:
+  message_type: J
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    AllocID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '70'
+    AllocTransType:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '71'
+    AllocType:
+      required: true
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '626'
+    SecondaryAllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '793'
+    RefAllocID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '72'
+    AllocCancReplaceReason:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '796'
+    AllocIntermedReqType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '808'
+    AllocLinkID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '196'
+    AllocLinkType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '197'
+    BookingRefID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '466'
+    AllocNoOrdersType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '857'
+    OrdAllocGrp:
+      required: false
+      component_type: OrdAllocGrp
+    ExecAllocGrp:
+      required: false
+      component_type: ExecAllocGrp
+    PreviouslyReported:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '570'
+    ReversalIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '700'
+    MatchType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '574'
+    Side:
+      required: true
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '54'
+    Instrument:
+      required: true
+      component_type: Instrument
+    InstrumentExtension:
+      required: false
+      component_type: InstrumentExtension
+    FinancingDetails:
+      required: false
+      component_type: FinancingDetails
+    UndInstrmtGrp:
+      required: false
+      component_type: UndInstrmtGrp
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    Quantity:
+      required: true
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '53'
+    QtyType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '854'
+    LastMkt:
+      required: false
+      type: Exchange
+      validation_regex: '{{Exchange}}'
+      id: '30'
+    TradeOriginationDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '229'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    PriceType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '423'
+    AvgPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '6'
+    AvgParPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '860'
+    SpreadOrBenchmarkCurveData:
+      required: false
+      component_type: SpreadOrBenchmarkCurveData
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    AvgPxPrecision:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '74'
+    Parties:
+      required: false
+      component_type: Parties
+    TradeDate:
+      required: true
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '75'
+    TransactTime:
+      required: false
+      type: UTCTimestamp
+      validation_regex: '{{UTCTimestamp}}'
+      id: '60'
+    SettlType:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '63'
+    SettlDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '64'
+    BookingType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '775'
+    GrossTradeAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '381'
+    Concession:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '238'
+    TotalTakedown:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '237'
+    NetMoney:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '118'
+    PositionEffect:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '77'
+    AutoAcceptIndicator:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '754'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    NumDaysInterest:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '157'
+    AccruedInterestRate:
+      required: false
+      type: Percentage
+      validation_regex: '{{Percentage}}'
+      id: '158'
+    AccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '159'
+    TotalAccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '540'
+    InterestAtMaturity:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '738'
+    EndAccruedInterestAmt:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '920'
+    StartCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '921'
+    EndCash:
+      required: false
+      type: Amt
+      validation_regex: '{{Amt}}'
+      id: '922'
+    LegalConfirm:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '650'
+    Stipulations:
+      required: false
+      component_type: Stipulations
+    YieldData:
+      required: false
+      component_type: YieldData
+    TotNoAllocs:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '892'
+    LastFragment:
+      required: false
+      type: Boolean
+      validation_regex: '{{Boolean}}'
+      id: '893'
+    AllocGrp:
+      required: false
+      component_type: AllocGrp
+    PositionAmountData:
+      required: false
+      component_type: PositionAmountData
+    AvgPxIndicator:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '819'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    TrdType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '828'
+    TrdSubType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '829'
+    CustOrderCapacity:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '582'
+    TradeInputSource:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '578'
+    MultiLegReportingType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '442'
+    MessageEventSource:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '1011'
+    RndPx:
+      required: false
+      type: Price
+      validation_regex: '{{Price}}'
+      id: '991'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

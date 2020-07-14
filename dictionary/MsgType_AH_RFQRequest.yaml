@@ -1,0 +1,23 @@
+RFQRequest:
+  message_type: AH
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    RFQReqID:
+      required: true
+      type: String
+      validation_regex: '{{String}}'
+      id: '644'
+    RFQReqGrp:
+      required: true
+      component_type: RFQReqGrp
+    SubscriptionRequestType:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '263'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+

@@ -1,0 +1,99 @@
+SecurityDefinitionUpdateReport:
+  message_type: BP
+  fields:
+    MessageHeader:
+      required: true
+      component_type: StandardHeader
+    SecurityReportID:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '964'
+    SecurityReqID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '320'
+    SecurityResponseID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '322'
+    SecurityResponseType:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '323'
+    ClearingBusinessDate:
+      required: false
+      type: LocalMktDate
+      validation_regex: '{{LocalMktDate}}'
+      id: '715'
+    SecurityUpdateAction:
+      required: false
+      type: Char
+      validation_regex: '{{Char}}'
+      id: '980'
+    CorporateAction:
+      required: false
+      type: MultipleCharValue
+      validation_regex: '{{MultipleCharValue}}'
+      id: '292'
+    Instrument:
+      required: false
+      component_type: Instrument
+    UnderlyingInstrument:
+      required: false
+      component_type: UnderlyingInstrument
+    Currency:
+      required: false
+      type: Currency
+      validation_regex: '{{Currency}}'
+      id: '15'
+    TradingSessionID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '336'
+    TradingSessionSubID:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '625'
+    Text:
+      required: false
+      type: String
+      validation_regex: '{{String}}'
+      id: '58'
+    EncodedTextLen:
+      required: false
+      type: Length
+      validation_regex: '{{Length}}'
+      id: '354'
+    EncodedText:
+      required: false
+      type: Data
+      validation_regex: '{{Data}}'
+      id: '355'
+    InstrmtLegGrp:
+      required: false
+      component_type: InstrmtLegGrp
+    ExpirationCycle:
+      required: false
+      type: Int
+      validation_regex: '{{Int}}'
+      id: '827'
+    RoundLot:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '561'
+    MinTradeVol:
+      required: false
+      type: Qty
+      validation_regex: '{{Qty}}'
+      id: '562'
+    MessageTrailer:
+      required: true
+      component_type: StandardTrailer
+
